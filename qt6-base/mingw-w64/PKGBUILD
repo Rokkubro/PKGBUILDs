@@ -73,8 +73,8 @@ build() {
   for _arch in ${_architectures}; do
     export PKG_CONFIG=/usr/bin/$_arch-pkg-config
     $_arch-cmake -G Ninja -B build-$_arch -S $_pkgfqn \
-      -DCMAKE_C_COMPILER=x86_64-w64-mingw32-clang
-      -DCMAKE_CXX_COMPILER=x86_64-w64-mingw32-clang++
+      -DCMAKE_C_COMPILER=x86_64-w64-mingw32-clang \
+      -DCMAKE_CXX_COMPILER=x86_64-w64-mingw32-clang++ \
       -DFEATURE_pkg_config=ON \
       -DFEATURE_system_pcre2=ON \
       -DFEATURE_system_freetype=ON \
